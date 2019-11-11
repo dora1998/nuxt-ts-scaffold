@@ -1,7 +1,7 @@
-import NuxtConfiguration from '@nuxt/config'
+import { Configuration } from '@nuxt/types'
 const pkg = require('./package')
 
-const nuxtConfig: NuxtConfiguration = {
+const nuxtConfig: Configuration = {
   mode: 'spa',
 
   /*
@@ -46,26 +46,7 @@ const nuxtConfig: NuxtConfiguration = {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
-  /*
-   ** Build configuration
-   */
-  build: {
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        if (!config.module) return
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-  }
+  buildModules: ['@nuxt/typescript-build']
 }
 
 export default nuxtConfig
