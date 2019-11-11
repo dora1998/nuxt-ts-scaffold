@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <div class="container">
     <div>
       <logo />
       <h1 class="title">
@@ -21,19 +21,18 @@
         </a>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 import Logo from '~/components/Logo.vue'
 
-@Component({
+export default Vue.extend({
   components: {
     Logo
   }
 })
-export default class Index extends Vue {}
 </script>
 
 <style>
