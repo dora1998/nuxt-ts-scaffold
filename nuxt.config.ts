@@ -37,7 +37,6 @@ const nuxtConfig: Configuration = {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
   ],
   /*
    ** Axios module configuration
